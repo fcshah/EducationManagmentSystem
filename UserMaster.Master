@@ -1,0 +1,186 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserMaster.Master.cs" Inherits="EducationManagementSystem.User" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head runat="server">
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Online Education System</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <!--[if IE 8]><link href="css/ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+    <link href="css/font.css" rel="stylesheet" />
+    <script src="jquery/jQuery_v1.7.js"></script>
+    <script src="jquery/jQuery_v1.9.2.js"></script>
+
+    <script type="text/javascript" src="js/plugins/charts/jquery.sparkline.min.js"></script>
+
+    <script type="text/javascript" src="js/plugins/ui/jquery.easytabs.min.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.collapsible.min.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.bootbox.min.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.colorpicker.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.timepicker.min.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.jgrowl.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.fancybox.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.fullcalendar.min.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.elfinder.js"></script>
+
+    <script type="text/javascript" src="js/plugins/uploader/plupload.js"></script>
+    <script type="text/javascript" src="js/plugins/uploader/plupload.html4.js"></script>
+    <script type="text/javascript" src="js/plugins/uploader/plupload.html5.js"></script>
+    <script type="text/javascript" src="js/plugins/uploader/jquery.plupload.queue.js"></script>
+
+    <script type="text/javascript" src="js/plugins/forms/jquery.uniform.min.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.autosize.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.inputlimiter.min.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.tagsinput.min.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.inputmask.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.select2.min.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.listbox.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.validation.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.validationEngine-en.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.form.wizard.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.form.js"></script>
+
+    <script type="text/javascript" src="js/globalize/globalize.js"></script>
+    <script type="text/javascript" src="js/globalize/globalize.culture.de-DE.js"></script>
+    <script type="text/javascript" src="js/globalize/globalize.culture.ja-JP.js"></script>
+
+    <script type="text/javascript" src="js/plugins/tables/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript" src="js/files/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/files/functions.js"></script>
+
+    <style type="text/css">
+        .requiredfield {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <!-- Fixed top -->
+            <div id="top">
+                <div class="fixed">
+                    <a href="" title="" class="logo">
+                        <h1>
+                            <label style="color: white; font-family: Georgia">Online Education System</label>
+                        </h1>
+
+
+                    </a>
+
+                    <ul class="top-menu">
+                        <li class="dropdown">
+                            <a class="user-menu" data-toggle="dropdown">
+                                <img src="img/Tulips.jpg" width="40px" height="40px" alt="" /> <span>Welcome,
+                                    <asp:Label runat="server" ID="lblUser"></asp:Label>
+                                    <b class="caret"></b></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="UserProfile.aspx" title=""><i class="icon-user"></i>Profile</a></li>
+
+                                <li><a href="UserChangePassword.aspx" title=""><i class="icon-cog"></i>Change Password</a></li>
+                                <li>
+                                    <asp:LinkButton ID="lnkLogout" runat="server" OnClick="lnkLogout_Click" Text="Logout"></asp:LinkButton>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <marquee><b> Welcome to Online Education Portal </b></marquee>
+                </div>
+            </div>
+            <!-- /fixed top -->
+
+
+            <!-- Content container -->
+            <div id="container">
+
+                <!-- Sidebar -->
+                <div id="sidebar">
+
+                    <div class="sidebar-tabs">
+                        <ul class="tabs-nav two-items">
+                            <li><a href="#general" title=""><i class="icon-reorder"></i></a></li>
+                        </ul>
+                        <div id="general">
+                            <!-- Sidebar user -->
+                            <div class="sidebar-user widget">
+                                <div class="navbar">
+                                    <div class="navbar-inner">
+                                        <h6>Welcome,
+                                            <asp:Label runat="server" ID="lblUsername1"></asp:Label>!</h6>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <!-- /sidebar user -->
+                            <!-- Main navigation -->
+                            <ul class="navigation widget">
+                                <li class="active"><a href="" title="" class="expand" id="current"><i class="icon-tasks"></i>Menu</a>
+
+                                </li>
+                                <li><a href="UserHome.aspx" title=""><i class="icon-home"></i>Home</a></li>
+                                <li><a href="" title="" class="expand"><i class="icon-reorder"></i>Post</a>
+                                    <ul>
+                                        <li><a href="UserAddPost.aspx" title="">Add New Post</a></li>
+                                        <li><a href="UserViewPost.aspx" title="">View All Post</a></li>
+
+                                    </ul>
+                                </li>
+
+                                <li><a href="" title=""><i class="icon-reorder"></i>Interview Preparation</a>
+                                    <ul>
+                                        <li><a href="UserViewQuestion.aspx" title="">Interview Preparation</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="" title=""><i class="icon-reorder"></i>Library</a>
+
+                                    <ul>
+                                        <li><a href="UserViewDocuments.aspx" title="">View Documents</a></li>
+                                    </ul>
+
+                                </li>
+                                <li><a href="" title=""><i class="icon-cogs"></i>Settings</a>
+                                    <ul>
+
+                                        <li><a href="UserChangePassword.aspx" title="">Change Password</a></li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                            <!-- /main navigation -->
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /sidebar -->
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+                <!-- Footer -->
+                <div id="footer">
+                    <div class="copyrights">&copy;  Online Education System.</div>
+
+                </div>
+                <!-- /footer -->
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>
